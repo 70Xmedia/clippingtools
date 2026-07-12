@@ -80,6 +80,16 @@ h2{ font-size: clamp(1.6rem, 2.6vw, 2.25rem); }
 h3{ font-size: 1.3rem; }
 p{ margin: 0 0 1em 0; color: var(--ink-soft); }
 
+
+/* Force the main container to stay within screen width on mobile */
+.flex-wrap.-mx-2 {
+    max-width: 100vw;
+    overflow-x: hidden;
+}
+
+
+
+
 .container{
   max-width: var(--maxw);
   margin: 0 auto;
