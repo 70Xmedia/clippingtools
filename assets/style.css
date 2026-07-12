@@ -453,20 +453,13 @@ section:has(.tool-card) .tool-card {
 
 
 
-/* ============================================
-   COMPLETE MOBILE MENU FIX
+//* ============================================
+   SQUARE PLUS/MINUS TOGGLE - VISIBLE FIX
    ============================================ */
 
-/* ---------- HIDE ON DESKTOP ---------- */
-.nav-toggle,
-.nav-links {
-  display: none !important;
-}
-
-/* ---------- SHOW ON MOBILE ---------- */
 @media (max-width: 860px) {
 
-  /* ---------- HAMBURGER BUTTON ---------- */
+  /* ---------- SQUARE BUTTON ---------- */
   .nav-toggle {
     display: flex !important;
     align-items: center !important;
@@ -482,14 +475,10 @@ section:has(.tool-card) .tool-card {
     position: relative !important;
     z-index: 10000 !important;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06) !important;
-    /* Remove any inherited styles */
-    background-image: none !important;
-    background-color: #ffffff !important;
   }
 
   .nav-toggle:hover {
     background: #EDF4FF !important;
-    background-color: #EDF4FF !important;
     border-color: #2454FF !important;
   }
 
@@ -499,14 +488,12 @@ section:has(.tool-card) .tool-card {
     display: block !important;
     width: 22px !important;
     height: 22px !important;
+    transition: all 0.3s ease !important;
     margin: 0 !important;
     padding: 0 !important;
-    /* Hide any existing content */
-    font-size: 0 !important;
-    text-indent: -9999px !important;
   }
 
-  /* Horizontal line */
+  /* Horizontal line - DARK COLOR */
   .nav-toggle span::before {
     content: '' !important;
     position: absolute !important;
@@ -518,10 +505,9 @@ section:has(.tool-card) .tool-card {
     transform: translateY(-50%) !important;
     transition: all 0.3s ease !important;
     border-radius: 2px !important;
-    display: block !important;
   }
 
-  /* Vertical line */
+  /* Vertical line - DARK COLOR */
   .nav-toggle span::after {
     content: '' !important;
     position: absolute !important;
@@ -533,10 +519,9 @@ section:has(.tool-card) .tool-card {
     transform: translateX(-50%) !important;
     transition: all 0.3s ease !important;
     border-radius: 2px !important;
-    display: block !important;
   }
 
-  /* ---------- MINUS (-) WHEN OPEN ---------- */
+  /* ---------- MINUS (-) WHEN OPEN - RED ---------- */
   .nav-toggle.active span::before {
     transform: translateY(-50%) !important;
     background: #D14C4C !important;
@@ -547,7 +532,7 @@ section:has(.tool-card) .tool-card {
     transform: translateX(-50%) scaleY(0) !important;
   }
 
-  /* ---------- HIDE OLD SPAN ELEMENTS ---------- */
+  /* Hide the old span elements */
   .nav-toggle span:nth-child(1),
   .nav-toggle span:nth-child(2),
   .nav-toggle span:nth-child(3) {
