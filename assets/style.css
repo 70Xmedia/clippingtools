@@ -456,14 +456,13 @@ section:has(.tool-card) .tool-card {
 
 
 
-
 /* ============================================
-   CLEAN LIGHT MOBILE MENU - PLUS / MINUS TOGGLE
+   SQUARE PLUS/MINUS TOGGLE
    ============================================ */
 
 @media (max-width: 860px) {
 
-  /* ---------- HAMBURGER BUTTON ---------- */
+  /* ---------- SQUARE BUTTON ---------- */
   .nav-toggle {
     display: flex !important;
     align-items: center !important;
@@ -473,7 +472,7 @@ section:has(.tool-card) .tool-card {
     padding: 0 !important;
     background: transparent !important;
     border: 2px solid var(--border-strong) !important;
-    border-radius: 50% !important;
+    border-radius: 8px !important;
     cursor: pointer !important;
     transition: all 0.3s ease !important;
     position: relative !important;
@@ -492,10 +491,9 @@ section:has(.tool-card) .tool-card {
     display: block !important;
     width: 20px !important;
     height: 20px !important;
-    transition: all 0.3s ease !important;
   }
 
-  /* Horizontal line */
+  /* Horizontal line (part of the +) */
   .nav-toggle span::before {
     content: '' !important;
     position: absolute !important;
@@ -509,7 +507,7 @@ section:has(.tool-card) .tool-card {
     border-radius: 2px !important;
   }
 
-  /* Vertical line (creates the +) */
+  /* Vertical line (part of the +) */
   .nav-toggle span::after {
     content: '' !important;
     position: absolute !important;
@@ -523,15 +521,17 @@ section:has(.tool-card) .tool-card {
     border-radius: 2px !important;
   }
 
-  /* ---------- X (×) WHEN OPEN ---------- */
+  /* ---------- MINUS (-) WHEN OPEN ---------- */
   .nav-toggle.active span::before {
-    transform: translateY(-50%) rotate(45deg) !important;
+    /* Keep horizontal line, move slightly down */
+    transform: translateY(-50%) !important;
     background: var(--bad) !important;
   }
 
   .nav-toggle.active span::after {
-    transform: translateX(-50%) rotate(45deg) !important;
-    background: var(--bad) !important;
+    /* Hide vertical line completely */
+    opacity: 0 !important;
+    transform: translateX(-50%) scaleY(0) !important;
   }
 
   /* Hide the old span elements if they exist */
