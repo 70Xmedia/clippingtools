@@ -525,7 +525,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
 
 /* ---------------- Page header (inner pages) ---------------- */
 .page-hero{
-  padding: 56px 0 40px;
+  padding: 56px 90px 40px;
   border-bottom: 1px solid var(--border);
 }
 .page-hero h1{ margin-bottom: 8px; }
