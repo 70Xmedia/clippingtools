@@ -1032,6 +1032,481 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
   html{ scroll-behavior: auto; }
 }
 
+
+
+
+/* ============================================
+   MOBILE MENU ENHANCEMENTS
+   ============================================ */
+
+@media (max-width: 768px) {
+
+  /* ---------- HAMBURGER ICON ENHANCEMENTS ---------- */
+  
+  /* Make the hamburger button bigger and more tappable */
+  .menu-toggle,
+  .nav-toggle,
+  .mobile-menu-toggle,
+  button[aria-label*="menu"],
+  button[aria-label*="Menu"],
+  .hamburger,
+  .navbar-toggler {
+    width: 54px !important;
+    height: 54px !important;
+    min-width: 54px !important;
+    min-height: 54px !important;
+    padding: 12px !important;
+    border-radius: 8px !important;
+    background: #1a1a2e !important; /* Dark elegant background */
+    border: 2px solid rgba(255, 255, 255, 0.15) !important;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3) !important;
+    cursor: pointer !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    position: relative !important;
+    transition: all 0.3s ease !important;
+  }
+
+  /* Hover/active state */
+  .menu-toggle:hover,
+  .nav-toggle:hover,
+  .mobile-menu-toggle:hover,
+  .hamburger:hover,
+  .navbar-toggler:hover {
+    background: #2a2a4e !important;
+    transform: scale(1.05) !important;
+    border-color: rgba(255, 255, 255, 0.3) !important;
+  }
+
+  /* Make the actual hamburger lines thicker and bigger */
+  .menu-toggle .bar,
+  .menu-toggle span,
+  .nav-toggle .bar,
+  .nav-toggle span,
+  .mobile-menu-toggle .bar,
+  .mobile-menu-toggle span,
+  .hamburger .bar,
+  .hamburger span,
+  .navbar-toggler-icon,
+  .navbar-toggler span {
+    width: 28px !important;
+    height: 3px !important;
+    background: #ffffff !important;
+    border-radius: 2px !important;
+    display: block !important;
+    margin: 5px auto !important;
+    transition: all 0.3s ease !important;
+  }
+
+  /* If it's an icon (Font Awesome, SVG, etc.) */
+  .menu-toggle i,
+  .nav-toggle i,
+  .mobile-menu-toggle i,
+  .hamburger i,
+  .fa-bars,
+  .fas.fa-bars {
+    font-size: 28px !important;
+    color: #ffffff !important;
+  }
+
+  /* SVG icons */
+  .menu-toggle svg,
+  .nav-toggle svg,
+  .mobile-menu-toggle svg,
+  .hamburger svg {
+    width: 30px !important;
+    height: 30px !important;
+    fill: #ffffff !important;
+  }
+
+  /* ---------- MOBILE DROPDOWN MENU ENHANCEMENTS ---------- */
+
+  /* The menu container */
+  .menu-container,
+  .nav-container,
+  .mobile-menu,
+  .nav-menu,
+  .navbar-nav,
+  .menu-mobile,
+  .collapse,
+  .navbar-collapse {
+    position: fixed !important;
+    top: 0 !important;
+    right: -100% !important;
+    width: 85% !important;
+    max-width: 400px !important;
+    height: 100vh !important;
+    background: linear-gradient(145deg, #1a1a2e 0%, #16213e 100%) !important;
+    padding: 40px 30px !important;
+    box-shadow: -10px 0 40px rgba(0, 0, 0, 0.5) !important;
+    transition: right 0.4s cubic-bezier(0.4, 0, 0.2, 1) !important;
+    overflow-y: auto !important;
+    z-index: 9999 !important;
+    display: block !important;
+    border-left: 2px solid rgba(255, 255, 255, 0.08) !important;
+  }
+
+  /* When menu is open */
+  .menu-container.open,
+  .nav-container.open,
+  .mobile-menu.open,
+  .nav-menu.open,
+  .navbar-nav.open,
+  .menu-mobile.open,
+  .collapse.show,
+  .navbar-collapse.show,
+  .menu-container.active,
+  .nav-container.active,
+  .mobile-menu.active,
+  .nav-menu.active {
+    right: 0 !important;
+  }
+
+  /* Add a dark overlay when menu is open */
+  .menu-container.open::before,
+  .nav-container.open::before,
+  .mobile-menu.open::before,
+  .nav-menu.open::before,
+  .navbar-nav.open::before,
+  .menu-mobile.open::before,
+  .collapse.show::before,
+  .navbar-collapse.show::before {
+    content: '' !important;
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100vw !important;
+    height: 100vh !important;
+    background: rgba(0, 0, 0, 0.7) !important;
+    backdrop-filter: blur(8px) !important;
+    -webkit-backdrop-filter: blur(8px) !important;
+    z-index: -1 !important;
+    animation: fadeInOverlay 0.3s ease !important;
+  }
+
+  @keyframes fadeInOverlay {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+
+  /* ---------- CLOSE BUTTON (X) ---------- */
+  
+  /* Add a close button if your theme doesn't have one */
+  .menu-container .close-menu,
+  .nav-container .close-menu,
+  .mobile-menu .close-menu,
+  .nav-menu .close-menu,
+  .navbar-collapse .close-menu {
+    display: flex !important;
+    position: absolute !important;
+    top: 20px !important;
+    right: 20px !important;
+    width: 44px !important;
+    height: 44px !important;
+    background: rgba(255, 255, 255, 0.08) !important;
+    border: 2px solid rgba(255, 255, 255, 0.15) !important;
+    border-radius: 50% !important;
+    color: #ffffff !important;
+    font-size: 28px !important;
+    align-items: center !important;
+    justify-content: center !important;
+    cursor: pointer !important;
+    transition: all 0.3s ease !important;
+  }
+
+  .menu-container .close-menu:hover,
+  .nav-container .close-menu:hover,
+  .mobile-menu .close-menu:hover,
+  .nav-menu .close-menu:hover,
+  .navbar-collapse .close-menu:hover {
+    background: rgba(255, 255, 255, 0.15) !important;
+    transform: rotate(90deg) !important;
+  }
+
+  /* If your theme uses a different close button */
+  .navbar-toggler[aria-expanded="true"] .bar:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px) !important;
+  }
+  .navbar-toggler[aria-expanded="true"] .bar:nth-child(2) {
+    opacity: 0 !important;
+  }
+  .navbar-toggler[aria-expanded="true"] .bar:nth-child(3) {
+    transform: rotate(-45deg) translate(7px, -7px) !important;
+  }
+
+  /* ---------- MENU LIST ITEMS ---------- */
+
+  .menu-container ul,
+  .nav-container ul,
+  .mobile-menu ul,
+  .nav-menu ul,
+  .navbar-nav ul,
+  .menu-mobile ul,
+  .collapse ul,
+  .navbar-collapse ul {
+    list-style: none !important;
+    padding: 0 !important;
+    margin: 60px 0 20px 0 !important;
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 8px !important;
+  }
+
+  .menu-container li,
+  .nav-container li,
+  .mobile-menu li,
+  .nav-menu li,
+  .navbar-nav li,
+  .menu-mobile li,
+  .collapse li,
+  .navbar-collapse li {
+    margin: 0 !important;
+    padding: 0 !important;
+    width: 100% !important;
+  }
+
+  .menu-container a,
+  .nav-container a,
+  .mobile-menu a,
+  .nav-menu a,
+  .navbar-nav a,
+  .menu-mobile a,
+  .collapse a,
+  .navbar-collapse a {
+    display: flex !important;
+    align-items: center !important;
+    padding: 14px 20px !important;
+    font-size: 18px !important;
+    font-weight: 500 !important;
+    color: #ffffff !important;
+    text-decoration: none !important;
+    border-radius: 12px !important;
+    transition: all 0.3s ease !important;
+    background: transparent !important;
+    border: 1px solid transparent !important;
+    letter-spacing: 0.3px !important;
+    gap: 12px !important;
+  }
+
+  .menu-container a:hover,
+  .nav-container a:hover,
+  .mobile-menu a:hover,
+  .nav-menu a:hover,
+  .navbar-nav a:hover,
+  .menu-mobile a:hover,
+  .collapse a:hover,
+  .navbar-collapse a:hover {
+    background: rgba(255, 255, 255, 0.08) !important;
+    border-color: rgba(255, 255, 255, 0.12) !important;
+    transform: translateX(8px) !important;
+    color: #ffffff !important;
+  }
+
+  /* Active/Current page */
+  .menu-container .current-menu-item a,
+  .nav-container .current-menu-item a,
+  .mobile-menu .current-menu-item a,
+  .nav-menu .current-menu-item a,
+  .navbar-nav .current-menu-item a,
+  .menu-mobile .current-menu-item a,
+  .collapse .current-menu-item a,
+  .navbar-collapse .current-menu-item a {
+    background: rgba(255, 255, 255, 0.1) !important;
+    border-color: rgba(255, 255, 255, 0.2) !important;
+    border-left: 4px solid #6c63ff !important;
+  }
+
+  /* ---------- SUB-MENUS ---------- */
+
+  .menu-container .sub-menu,
+  .nav-container .sub-menu,
+  .mobile-menu .sub-menu,
+  .nav-menu .sub-menu,
+  .navbar-nav .sub-menu,
+  .menu-mobile .sub-menu,
+  .collapse .sub-menu,
+  .navbar-collapse .sub-menu {
+    padding-left: 20px !important;
+    margin-top: 4px !important;
+    border-left: 2px solid rgba(255, 255, 255, 0.08) !important;
+  }
+
+  .menu-container .sub-menu a,
+  .nav-container .sub-menu a,
+  .mobile-menu .sub-menu a,
+  .nav-menu .sub-menu a,
+  .navbar-nav .sub-menu a,
+  .menu-mobile .sub-menu a,
+  .collapse .sub-menu a,
+  .navbar-collapse .sub-menu a {
+    font-size: 16px !important;
+    padding: 12px 20px !important;
+    opacity: 0.8 !important;
+  }
+
+  .menu-container .sub-menu a:hover,
+  .nav-container .sub-menu a:hover,
+  .mobile-menu .sub-menu a:hover,
+  .nav-menu .sub-menu a:hover,
+  .navbar-nav .sub-menu a:hover,
+  .menu-mobile .sub-menu a:hover,
+  .collapse .sub-menu a:hover,
+  .navbar-collapse .sub-menu a:hover {
+    opacity: 1 !important;
+  }
+
+  /* ---------- MENU FOOTER (Optional) ---------- */
+
+  .menu-container .menu-footer,
+  .nav-container .menu-footer,
+  .mobile-menu .menu-footer,
+  .nav-menu .menu-footer {
+    margin-top: 30px !important;
+    padding-top: 20px !important;
+    border-top: 1px solid rgba(255, 255, 255, 0.08) !important;
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 12px !important;
+  }
+
+  .menu-container .menu-footer a,
+  .nav-container .menu-footer a,
+  .mobile-menu .menu-footer a,
+  .nav-menu .menu-footer a {
+    font-size: 14px !important;
+    color: rgba(255, 255, 255, 0.6) !important;
+    padding: 8px 0 !important;
+  }
+
+  .menu-container .menu-footer a:hover,
+  .nav-container .menu-footer a:hover,
+  .mobile-menu .menu-footer a:hover,
+  .nav-menu .menu-footer a:hover {
+    color: #ffffff !important;
+  }
+
+  /* ---------- SMOOTH SCROLLBAR ---------- */
+
+  .menu-container::-webkit-scrollbar,
+  .nav-container::-webkit-scrollbar,
+  .mobile-menu::-webkit-scrollbar,
+  .nav-menu::-webkit-scrollbar,
+  .navbar-collapse::-webkit-scrollbar {
+    width: 4px !important;
+  }
+
+  .menu-container::-webkit-scrollbar-track,
+  .nav-container::-webkit-scrollbar-track,
+  .mobile-menu::-webkit-scrollbar-track,
+  .nav-menu::-webkit-scrollbar-track,
+  .navbar-collapse::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.05) !important;
+  }
+
+  .menu-container::-webkit-scrollbar-thumb,
+  .nav-container::-webkit-scrollbar-thumb,
+  .mobile-menu::-webkit-scrollbar-thumb,
+  .nav-menu::-webkit-scrollbar-thumb,
+  .navbar-collapse::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.2) !important;
+    border-radius: 10px !important;
+  }
+
+  /* ---------- MENU ANIMATIONS ---------- */
+
+  @keyframes slideIn {
+    from { 
+      transform: translateX(100%);
+      opacity: 0;
+    }
+    to {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+
+  @keyframes slideInItems {
+    from {
+      transform: translateX(30px);
+      opacity: 0;
+    }
+    to {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+
+  .menu-container.open,
+  .nav-container.open,
+  .mobile-menu.open,
+  .nav-menu.open,
+  .navbar-collapse.show {
+    animation: slideIn 0.4s cubic-bezier(0.4, 0, 0.2, 1) !important;
+  }
+
+  .menu-container.open li,
+  .nav-container.open li,
+  .mobile-menu.open li,
+  .nav-menu.open li,
+  .navbar-collapse.show li {
+    animation: slideInItems 0.4s ease forwards !important;
+    opacity: 0;
+  }
+
+  .menu-container.open li:nth-child(1),
+  .nav-container.open li:nth-child(1),
+  .mobile-menu.open li:nth-child(1),
+  .nav-menu.open li:nth-child(1) {
+    animation-delay: 0.05s !important;
+  }
+  .menu-container.open li:nth-child(2),
+  .nav-container.open li:nth-child(2),
+  .mobile-menu.open li:nth-child(2),
+  .nav-menu.open li:nth-child(2) {
+    animation-delay: 0.1s !important;
+  }
+  .menu-container.open li:nth-child(3),
+  .nav-container.open li:nth-child(3),
+  .mobile-menu.open li:nth-child(3),
+  .nav-menu.open li:nth-child(3) {
+    animation-delay: 0.15s !important;
+  }
+  .menu-container.open li:nth-child(4),
+  .nav-container.open li:nth-child(4),
+  .mobile-menu.open li:nth-child(4),
+  .nav-menu.open li:nth-child(4) {
+    animation-delay: 0.2s !important;
+  }
+  .menu-container.open li:nth-child(5),
+  .nav-container.open li:nth-child(5),
+  .mobile-menu.open li:nth-child(5),
+  .nav-menu.open li:nth-child(5) {
+    animation-delay: 0.25s !important;
+  }
+  .menu-container.open li:nth-child(6),
+  .nav-container.open li:nth-child(6),
+  .mobile-menu.open li:nth-child(6),
+  .nav-menu.open li:nth-child(6) {
+    animation-delay: 0.3s !important;
+  }
+  .menu-container.open li:nth-child(7),
+  .nav-container.open li:nth-child(7),
+  .mobile-menu.open li:nth-child(7),
+  .nav-menu.open li:nth-child(7) {
+    animation-delay: 0.35s !important;
+  }
+  .menu-container.open li:nth-child(8),
+  .nav-container.open li:nth-child(8),
+  .mobile-menu.open li:nth-child(8),
+  .nav-menu.open li:nth-child(8) {
+    animation-delay: 0.4s !important;
+  }
+}
+
+
+
+
 /* ---------------- Buttons ---------------- */
 .btn{
   display: inline-flex;
