@@ -651,22 +651,6 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
 .nav-cta{ display: flex; align-items: center; gap: 12px; }
 
 
-@media (max-width: 860px){
-  .nav-links{
-    position: absolute;
-    top: 100%; left: 0; right: 0;
-    background: var(--surface);
-    flex-direction: column;
-    align-items: flex-start;
-    padding: 18px 24px;
-    border-bottom: 1px solid var(--border);
-    display: none;
-    gap: 16px;
-  }
-  .nav-links.open{ display: flex; }
-  .nav-cta .btn-secondary{ display: none; }
-  .nav-toggle{ display: block; }
-}
 
 /* ---------------- Hero ---------------- */
 .hero{
