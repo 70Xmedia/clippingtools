@@ -1580,6 +1580,37 @@ textarea{ resize: vertical; min-height: 120px; }
 
 
 
+   /* ============================================
+   MOBILE MENU - HIDE BY DEFAULT
+   ============================================ */
+
+@media (max-width: 860px) {
+  /* Hide the menu links by default on mobile */
+  .nav-links {
+    display: none !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    padding: 18px 24px !important;
+    background: var(--surface) !important;
+    border-bottom: 1px solid var(--border) !important;
+    gap: 16px !important;
+    position: absolute !important;
+    top: 100% !important;
+    left: 0 !important;
+    right: 0 !important;
+  }
+
+  /* Show the menu when the 'open' class is added */
+  .nav-links.open {
+    display: flex !important;
+  }
+
+  /* Hide the secondary button on mobile */
+  .nav-cta .btn-secondary {
+    display: none !important;
+  }
+}
+
 
 
    
