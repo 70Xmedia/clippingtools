@@ -169,6 +169,282 @@ section:has(.tool-card) .tool-card {
 }
 
 
+/* ============================================
+   MOBILE RESPONSIVE FIXES (Desktop Unchanged)
+   Applies only to screens 768px and below
+   ============================================ */
+
+@media (max-width: 768px) {
+
+  /* ---------- GENERAL MOBILE RESET ---------- */
+  body {
+    overflow-x: hidden !important;
+    width: 100% !important;
+  }
+
+  /* ---------- FIX THE MAIN TOOL GRID (Online Tools) ---------- */
+  .flex-wrap.-mx-2 {
+    max-width: 100vw !important;
+    overflow-x: hidden !important;
+    padding: 0 4px !important;
+  }
+
+  .flex-wrap.-mx-2 > div {
+    flex: 0 0 100% !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+    padding: 0.75rem !important;
+    box-sizing: border-box !important;
+  }
+
+  /* Keep all inner content contained */
+  .flex-wrap.-mx-2 > div * {
+    max-width: 100% !important;
+    word-break: break-word !important;
+  }
+
+  /* Shrink images in online cards */
+  .flex-wrap.-mx-2 img {
+    height: auto !important;
+    width: 100% !important;
+    max-width: 200px !important;
+  }
+
+  /* ---------- FIX OFFLINE & GAMING SECTIONS ---------- */
+  /* Target sections by their headings */
+  section:has(h2:contains("Offline Clipping Tools")),
+  section:has(h2:contains("Gaming Clipping Tools")) {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    overflow: hidden !important;
+    padding: 0 0.5rem !important;
+    box-sizing: border-box !important;
+  }
+
+  /* Target inner grid/flex containers */
+  section:has(h2:contains("Offline Clipping Tools")) > div,
+  section:has(h2:contains("Gaming Clipping Tools")) > div,
+  section:has(h2:contains("Offline Clipping Tools")) .grid,
+  section:has(h2:contains("Gaming Clipping Tools")) .grid,
+  section:has(h2:contains("Offline Clipping Tools")) .flex,
+  section:has(h2:contains("Gaming Clipping Tools")) .flex,
+  section:has(h2:contains("Offline Clipping Tools")) .row,
+  section:has(h2:contains("Gaming Clipping Tools")) .row {
+    display: flex !important;
+    flex-direction: column !important;
+    flex-wrap: nowrap !important;
+    gap: 1.5rem !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    grid-template-columns: unset !important;
+    grid-template-rows: unset !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  /* Force all cards in these sections to full width */
+  section:has(h2:contains("Offline Clipping Tools")) .tool-card,
+  section:has(h2:contains("Gaming Clipping Tools")) .tool-card,
+  section:has(h2:contains("Offline Clipping Tools")) [class*="card"],
+  section:has(h2:contains("Gaming Clipping Tools")) [class*="card"],
+  section:has(h2:contains("Offline Clipping Tools")) .featured,
+  section:has(h2:contains("Gaming Clipping Tools")) .featured {
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    flex: 0 0 100% !important;
+    flex-basis: 100% !important;
+    margin: 0 auto 1rem auto !important;
+    padding: 1.25rem !important;
+    box-sizing: border-box !important;
+    overflow: hidden !important;
+    float: none !important;
+    clear: both !important;
+    display: block !important;
+  }
+
+  /* Specifically handle the featured card (Descript) */
+  .tool-card.featured {
+    width: 100% !important;
+    max-width: 100% !important;
+    flex: 0 0 100% !important;
+    margin: 0 auto 1.5rem auto !important;
+    display: block !important;
+  }
+
+  /* Keep all inner content contained in these sections */
+  section:has(h2:contains("Offline Clipping Tools")) *,
+  section:has(h2:contains("Gaming Clipping Tools")) * {
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  /* Fix text wrapping */
+  section:has(h2:contains("Offline Clipping Tools")) p,
+  section:has(h2:contains("Gaming Clipping Tools")) p,
+  section:has(h2:contains("Offline Clipping Tools")) li,
+  section:has(h2:contains("Gaming Clipping Tools")) li,
+  section:has(h2:contains("Offline Clipping Tools")) h3,
+  section:has(h2:contains("Gaming Clipping Tools")) h3,
+  section:has(h2:contains("Offline Clipping Tools")) h4,
+  section:has(h2:contains("Gaming Clipping Tools")) h4 {
+    word-break: break-word !important;
+    overflow-wrap: break-word !important;
+  }
+
+  /* Shrink buttons */
+  section:has(h2:contains("Offline Clipping Tools")) a,
+  section:has(h2:contains("Gaming Clipping Tools")) a,
+  section:has(h2:contains("Offline Clipping Tools")) button,
+  section:has(h2:contains("Gaming Clipping Tools")) button {
+    white-space: nowrap !important;
+    font-size: 0.8rem !important;
+    padding: 0.5rem 0.75rem !important;
+    display: inline-block !important;
+    max-width: 100% !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+  }
+
+  /* Shrink score/rating badges */
+  section:has(h2:contains("Offline Clipping Tools")) [class*="score"],
+  section:has(h2:contains("Gaming Clipping Tools")) [class*="score"],
+  section:has(h2:contains("Offline Clipping Tools")) [class*="rating"],
+  section:has(h2:contains("Gaming Clipping Tools")) [class*="rating"],
+  section:has(h2:contains("Offline Clipping Tools")) [class*="badge"],
+  section:has(h2:contains("Gaming Clipping Tools")) [class*="badge"] {
+    font-size: 0.9rem !important;
+    padding: 0.2rem 0.6rem !important;
+    display: inline-block !important;
+  }
+
+  /* Fix Pros/Cons lists */
+  section:has(h2:contains("Offline Clipping Tools")) ul,
+  section:has(h2:contains("Gaming Clipping Tools")) ul {
+    padding-left: 1.25rem !important;
+    margin: 0.5rem 0 !important;
+  }
+
+  section:has(h2:contains("Offline Clipping Tools")) li,
+  section:has(h2:contains("Gaming Clipping Tools")) li {
+    margin-bottom: 0.25rem !important;
+  }
+
+  /* ---------- ALTERNATIVE: FALLBACK SELECTORS ---------- */
+  /* If the :has() selector isn't supported (older browsers), 
+     use these more generic rules that won't affect desktop */
+  
+  /* Option 1: Target by section order (if offline is 3rd section) */
+  section:nth-of-type(3),
+  section:nth-of-type(4) {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    overflow: hidden !important;
+    padding: 0 0.5rem !important;
+    box-sizing: border-box !important;
+  }
+
+  section:nth-of-type(3) > div,
+  section:nth-of-type(4) > div {
+    display: flex !important;
+    flex-direction: column !important;
+    flex-wrap: nowrap !important;
+    gap: 1.5rem !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    grid-template-columns: unset !important;
+    grid-template-rows: unset !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  section:nth-of-type(3) .tool-card,
+  section:nth-of-type(4) .tool-card,
+  section:nth-of-type(3) .featured,
+  section:nth-of-type(4) .featured,
+  section:nth-of-type(3) [class*="card"],
+  section:nth-of-type(4) [class*="card"] {
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    flex: 0 0 100% !important;
+    flex-basis: 100% !important;
+    margin: 0 auto 1rem auto !important;
+    padding: 1.25rem !important;
+    box-sizing: border-box !important;
+    overflow: hidden !important;
+    float: none !important;
+    clear: both !important;
+    display: block !important;
+  }
+
+  /* Option 2: Target by direct class names (if you know them) */
+  .offline-section,
+  .gaming-section,
+  .desktop-local,
+  .built-for-players {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    overflow: hidden !important;
+    padding: 0 0.5rem !important;
+    box-sizing: border-box !important;
+  }
+
+  .offline-section > div,
+  .gaming-section > div,
+  .desktop-local > div,
+  .built-for-players > div {
+    display: flex !important;
+    flex-direction: column !important;
+    flex-wrap: nowrap !important;
+    gap: 1.5rem !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    grid-template-columns: unset !important;
+    grid-template-rows: unset !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  .offline-section .tool-card,
+  .gaming-section .tool-card,
+  .desktop-local .tool-card,
+  .built-for-players .tool-card {
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    flex: 0 0 100% !important;
+    flex-basis: 100% !important;
+    margin: 0 auto 1rem auto !important;
+    padding: 1.25rem !important;
+    box-sizing: border-box !important;
+    overflow: hidden !important;
+    float: none !important;
+    clear: both !important;
+    display: block !important;
+  }
+
+  /* ---------- FINAL SAFETY NET ---------- */
+  /* Catch any remaining overflowing elements */
+  * {
+    max-width: 100vw !important;
+  }
+
+  html {
+    overflow-x: hidden !important;
+  }
+}
+
+
 
 
 
