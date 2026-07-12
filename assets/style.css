@@ -87,6 +87,36 @@ p{ margin: 0 0 1em 0; color: var(--ink-soft); }
     overflow-x: hidden;
 }
 
+@media (max-width: 640px) {
+  /* Target the card container */
+  .flex-wrap.-mx-2 {
+    padding: 0 4px !important; /* Slight page-edge padding */
+  }
+  
+  .flex-wrap.-mx-2 > div {
+    flex: 0 0 100% !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+    padding: 0.75rem !important; /* Comfortable mobile padding */
+    box-sizing: border-box !important;
+  }
+
+  /* Keep all text and buttons inside */
+  .flex-wrap.-mx-2 > div * {
+    max-width: 100% !important;
+    word-break: break-word;
+  }
+
+  /* Make sure images shrink */
+  .flex-wrap.-mx-2 img {
+    height: auto !important;
+    width: 100% !important;
+    max-width: 200px !important; /* Prevents tiny logos from blowing up */
+  }
+}
+
+
+
 
 
 
