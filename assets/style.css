@@ -650,3 +650,14 @@ section{
 }
 
 }
+@media (max-width:860px){
+
+  .nav{
+    padding:14px 16px;
+  }
+
+  .brand span small{
+    display:none;
+  }
+
+}
