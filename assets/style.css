@@ -274,8 +274,10 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
   font-size: 1.12rem;
 }
 .hero-actions{
-  display: flex; gap: 14px; justify-content: center; flex-wrap: wrap;
-  margin-bottom: 52px;
+  display:flex;
+  gap:14px;
+  justify-content:center;
+  flex-wrap:wrap;
 }
 .hero-stats{
   display: grid;
