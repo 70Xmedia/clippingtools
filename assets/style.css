@@ -446,15 +446,25 @@ section:has(.tool-card) .tool-card {
 
 
 
+
+
 /* ============================================
    MOBILE MENU ENHANCEMENTS - clippingtools.com
+   PURE CSS - NO HTML CHANGES NEEDED
    ============================================ */
 
+/* ---------- HIDE ON DESKTOP ---------- */
+.nav-toggle,
+.nav-menu {
+  display: none !important;
+}
+
+/* ---------- SHOW ON MOBILE ---------- */
 @media (max-width: 768px) {
 
-  /* ---------- HAMBURGER ICON ENHANCEMENTS ---------- */
-  
+  /* Show hamburger */
   .nav-toggle {
+    display: flex !important;
     width: 54px !important;
     height: 54px !important;
     min-width: 54px !important;
@@ -465,7 +475,6 @@ section:has(.tool-card) .tool-card {
     border: 2px solid rgba(255, 255, 255, 0.15) !important;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3) !important;
     cursor: pointer !important;
-    display: flex !important;
     align-items: center !important;
     justify-content: center !important;
     flex-direction: column !important;
@@ -479,7 +488,6 @@ section:has(.tool-card) .tool-card {
     background: #2a2a4e !important;
     transform: scale(1.05) !important;
     border-color: rgba(255, 255, 255, 0.3) !important;
-    box-shadow: 0 6px 25px rgba(0, 0, 0, 0.4) !important;
   }
 
   /* Hamburger lines */
@@ -509,6 +517,7 @@ section:has(.tool-card) .tool-card {
   /* ---------- MOBILE MENU PANEL ---------- */
   
   .nav-menu {
+    display: block !important;
     position: fixed !important;
     top: 0 !important;
     right: -100% !important;
@@ -530,7 +539,7 @@ section:has(.tool-card) .tool-card {
     right: 0 !important;
   }
 
-  /* Overlay background */
+  /* Overlay */
   .nav-menu.open::before {
     content: '' !important;
     position: fixed !important;
@@ -550,37 +559,12 @@ section:has(.tool-card) .tool-card {
     to { opacity: 1; }
   }
 
-  /* ---------- CLOSE BUTTON ---------- */
-  
-  .nav-menu .close-menu {
-    display: flex !important;
-    position: absolute !important;
-    top: 20px !important;
-    right: 20px !important;
-    width: 44px !important;
-    height: 44px !important;
-    background: rgba(255, 255, 255, 0.08) !important;
-    border: 2px solid rgba(255, 255, 255, 0.15) !important;
-    border-radius: 50% !important;
-    color: #ffffff !important;
-    font-size: 28px !important;
-    align-items: center !important;
-    justify-content: center !important;
-    cursor: pointer !important;
-    transition: all 0.3s ease !important;
-  }
-
-  .nav-menu .close-menu:hover {
-    background: rgba(255, 255, 255, 0.15) !important;
-    transform: rotate(90deg) !important;
-  }
-
   /* ---------- MENU ITEMS ---------- */
 
   .nav-menu ul {
     list-style: none !important;
     padding: 0 !important;
-    margin: 60px 0 20px 0 !important;
+    margin: 40px 0 20px 0 !important;
     display: flex !important;
     flex-direction: column !important;
     gap: 8px !important;
@@ -610,32 +594,6 @@ section:has(.tool-card) .tool-card {
     background: rgba(255, 255, 255, 0.08) !important;
     border-color: rgba(255, 255, 255, 0.12) !important;
     transform: translateX(8px) !important;
-  }
-
-  /* Active page */
-  .nav-menu .current-menu-item a,
-  .nav-menu .current_page_item a,
-  .nav-menu .active a {
-    background: rgba(255, 255, 255, 0.1) !important;
-    border-left: 4px solid #6c63ff !important;
-  }
-
-  /* ---------- SUB-MENUS ---------- */
-
-  .nav-menu .sub-menu {
-    padding-left: 20px !important;
-    margin-top: 4px !important;
-    border-left: 2px solid rgba(255, 255, 255, 0.08) !important;
-  }
-
-  .nav-menu .sub-menu a {
-    font-size: 16px !important;
-    padding: 12px 20px !important;
-    opacity: 0.8 !important;
-  }
-
-  .nav-menu .sub-menu a:hover {
-    opacity: 1 !important;
   }
 
   /* ---------- ANIMATIONS ---------- */
@@ -671,7 +629,6 @@ section:has(.tool-card) .tool-card {
     opacity: 0;
   }
 
-  /* Staggered delays */
   .nav-menu.open li:nth-child(1) { animation-delay: 0.05s !important; }
   .nav-menu.open li:nth-child(2) { animation-delay: 0.1s !important; }
   .nav-menu.open li:nth-child(3) { animation-delay: 0.15s !important; }
@@ -680,23 +637,7 @@ section:has(.tool-card) .tool-card {
   .nav-menu.open li:nth-child(6) { animation-delay: 0.3s !important; }
   .nav-menu.open li:nth-child(7) { animation-delay: 0.35s !important; }
   .nav-menu.open li:nth-child(8) { animation-delay: 0.4s !important; }
-
-  /* Scrollbar */
-  .nav-menu::-webkit-scrollbar {
-    width: 4px !important;
-  }
-
-  .nav-menu::-webkit-scrollbar-track {
-    background: rgba(255, 255, 255, 0.05) !important;
-  }
-
-  .nav-menu::-webkit-scrollbar-thumb {
-    background: rgba(255, 255, 255, 0.2) !important;
-    border-radius: 10px !important;
-  }
 }
-
-
 
 
 
