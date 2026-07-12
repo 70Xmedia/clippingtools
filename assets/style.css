@@ -117,6 +117,58 @@ p{ margin: 0 0 1em 0; color: var(--ink-soft); }
 
 
 
+/* Target the Offline and Gaming sections specifically */
+section:has(.tool-card.featured) .tool-card,
+section:has(.tool-card) .tool-card {
+  /* 1. Override any fixed widths */
+  width: 100% !important;
+  max-width: 100% !important;
+  min-width: 0 !important;
+  
+  /* 2. Stop flex/grid from forcing a specific size */
+  flex: 0 0 100% !important;
+  flex-basis: 100% !important;
+  
+  /* 3. Fix inner padding to prevent overflow */
+  padding: 1.25rem !important;
+  box-sizing: border-box !important;
+  
+  /* 4. Keep everything inside */
+  overflow: hidden !important;
+}
+
+/* Special catch for the .featured card if it has a grid class */
+.tool-card.featured {
+  display: block !important; /* Override any grid/flex display */
+  float: none !important;
+  clear: both !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+/* Make all inner content shrink */
+.tool-card.featured *,
+.tool-card * {
+  max-width: 100% !important;
+  box-sizing: border-box !important;
+}
+
+/* Specifically handle the "Pros" and "Cons" lists */
+.tool-card ul,
+.tool-card .pros-cons {
+  padding-left: 1.25rem !important; /* Give bullets room */
+  margin: 0.5rem 0 !important;
+}
+
+/* Shrink the big score badge if it exists */
+.tool-card .score-badge,
+.tool-card [class*="score"] {
+  font-size: 1rem !important;
+  padding: 0.25rem 0.5rem !important;
+  display: inline-block !important;
+}
+
+
 
 
 
