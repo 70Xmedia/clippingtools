@@ -354,7 +354,15 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
 }
 
 /* ---------------- Tool review card ---------------- */
+
+.tool-grid,
+.tool-card{
+    overflow:hidden;
+}
+
+
 .tool-grid{
+   
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 22px;
@@ -435,6 +443,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
   text-transform: uppercase;
   margin: 0 0 10px;
 }
+
 .pros h4{ color: var(--good); }
 .cons h4{ color: var(--bad); }
 .tool-cols ul{ margin: 0; padding: 0; list-style: none; }
