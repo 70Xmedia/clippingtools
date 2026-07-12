@@ -447,6 +447,67 @@ section:has(.tool-card) .tool-card {
 
 
 
+@media (max-width: 768px) {
+  /* Catch any button that looks like a hamburger */
+  button[aria-label*="menu"],
+  button[aria-label*="Menu"],
+  button[aria-label*="toggle"],
+  button[aria-label*="Toggle"],
+  button[class*="menu"]:not(.no-menu),
+  button[class*="toggle"],
+  button[class*="hamburger"],
+  button[class*="navbar-toggler"] {
+    width: 54px !important;
+    height: 54px !important;
+    min-width: 54px !important;
+    min-height: 54px !important;
+    padding: 12px !important;
+    border-radius: 8px !important;
+    background: #1a1a2e !important;
+    border: 2px solid rgba(255, 255, 255, 0.15) !important;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3) !important;
+  }
+
+  /* Catch any mobile menu panel */
+  .navbar-collapse,
+  .collapse,
+  [class*="mobile-menu"],
+  [class*="nav-menu"],
+  [class*="menu-panel"] {
+    position: fixed !important;
+    top: 0 !important;
+    right: -100% !important;
+    width: 85% !important;
+    max-width: 400px !important;
+    height: 100vh !important;
+    background: #1a1a2e !important;
+    padding: 40px 30px !important;
+    z-index: 9999 !important;
+    transition: right 0.4s ease !important;
+  }
+
+  /* When open */
+  .show,
+  .open,
+  .active,
+  [aria-expanded="true"] + .collapse,
+  [aria-expanded="true"] + .navbar-collapse {
+    right: 0 !important;
+  }
+
+  /* Menu items */
+  [class*="menu"] a,
+  [class*="nav"] a {
+    color: #ffffff !important;
+    font-size: 18px !important;
+    padding: 14px 20px !important;
+    display: block !important;
+  }
+}
+
+
+
+
 
 .container{
   max-width: var(--maxw);
