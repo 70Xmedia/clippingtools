@@ -453,15 +453,20 @@ section:has(.tool-card) .tool-card {
 
 
 
-
-
 /* ============================================
-   SQUARE PLUS/MINUS TOGGLE - VISIBLE FIX
+   COMPLETE MOBILE MENU FIX
    ============================================ */
 
+/* ---------- HIDE ON DESKTOP ---------- */
+.nav-toggle,
+.nav-links {
+  display: none !important;
+}
+
+/* ---------- SHOW ON MOBILE ---------- */
 @media (max-width: 860px) {
 
-  /* ---------- SQUARE BUTTON ---------- */
+  /* ---------- HAMBURGER BUTTON ---------- */
   .nav-toggle {
     display: flex !important;
     align-items: center !important;
@@ -469,19 +474,23 @@ section:has(.tool-card) .tool-card {
     width: 48px !important;
     height: 48px !important;
     padding: 0 !important;
-    background: #FFFFFF !important;
-    border: 2px solid var(--border-strong) !important;
+    background: #ffffff !important;
+    border: 2px solid #C3D9F7 !important;
     border-radius: 10px !important;
     cursor: pointer !important;
     transition: all 0.3s ease !important;
     position: relative !important;
     z-index: 10000 !important;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06) !important;
+    /* Remove any inherited styles */
+    background-image: none !important;
+    background-color: #ffffff !important;
   }
 
   .nav-toggle:hover {
-    background: var(--bg-soft) !important;
-    border-color: var(--blue-600) !important;
+    background: #EDF4FF !important;
+    background-color: #EDF4FF !important;
+    border-color: #2454FF !important;
   }
 
   /* ---------- PLUS SIGN (+) ---------- */
@@ -490,9 +499,14 @@ section:has(.tool-card) .tool-card {
     display: block !important;
     width: 22px !important;
     height: 22px !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    /* Hide any existing content */
+    font-size: 0 !important;
+    text-indent: -9999px !important;
   }
 
-  /* Horizontal line (part of the +) */
+  /* Horizontal line */
   .nav-toggle span::before {
     content: '' !important;
     position: absolute !important;
@@ -500,13 +514,14 @@ section:has(.tool-card) .tool-card {
     left: 0 !important;
     width: 100% !important;
     height: 3px !important;
-    background: var(--ink) !important;
+    background: #0A1B3D !important;
     transform: translateY(-50%) !important;
     transition: all 0.3s ease !important;
     border-radius: 2px !important;
+    display: block !important;
   }
 
-  /* Vertical line (part of the +) */
+  /* Vertical line */
   .nav-toggle span::after {
     content: '' !important;
     position: absolute !important;
@@ -514,16 +529,17 @@ section:has(.tool-card) .tool-card {
     left: 50% !important;
     width: 3px !important;
     height: 100% !important;
-    background: var(--ink) !important;
+    background: #0A1B3D !important;
     transform: translateX(-50%) !important;
     transition: all 0.3s ease !important;
     border-radius: 2px !important;
+    display: block !important;
   }
 
   /* ---------- MINUS (-) WHEN OPEN ---------- */
   .nav-toggle.active span::before {
     transform: translateY(-50%) !important;
-    background: var(--bad) !important;
+    background: #D14C4C !important;
   }
 
   .nav-toggle.active span::after {
@@ -531,7 +547,7 @@ section:has(.tool-card) .tool-card {
     transform: translateX(-50%) scaleY(0) !important;
   }
 
-  /* Hide the old span elements */
+  /* ---------- HIDE OLD SPAN ELEMENTS ---------- */
   .nav-toggle span:nth-child(1),
   .nav-toggle span:nth-child(2),
   .nav-toggle span:nth-child(3) {
@@ -544,8 +560,8 @@ section:has(.tool-card) .tool-card {
     flex-direction: column !important;
     align-items: flex-start !important;
     padding: 18px 24px !important;
-    background: var(--surface) !important;
-    border-bottom: 1px solid var(--border) !important;
+    background: #FFFFFF !important;
+    border-bottom: 1px solid #DCE8FB !important;
     gap: 16px !important;
     position: absolute !important;
     top: 100% !important;
@@ -562,7 +578,6 @@ section:has(.tool-card) .tool-card {
     display: none !important;
   }
 }
-
 
 
 
