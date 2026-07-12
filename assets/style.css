@@ -640,16 +640,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
 }
 .nav-links a:hover, .nav-links a.active{ color: var(--blue-600); }
 .nav-cta{ display: flex; align-items: center; gap: 12px; }
-.nav-toggle{
-  display: none;
-  background: none; border: 1px solid var(--border-strong);
-  border-radius: 8px; padding: 8px 10px; cursor: pointer;
-}
-.nav-toggle span, .nav-toggle span::before, .nav-toggle span::after{
-  display: block; width: 20px; height: 2px; background: var(--ink); position: relative;
-}
-.nav-toggle span::before{ content: ""; position: absolute; top: -6px; }
-.nav-toggle span::after{ content: ""; position: absolute; top: 6px; }
+
 
 @media (max-width: 860px){
   .nav-links{
