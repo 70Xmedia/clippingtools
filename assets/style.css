@@ -1710,15 +1710,6 @@ section{
 
 
 
-/* ==== Visit Tool buttons — orange override (added at end of file) ==== */
-.btn-visit{
-  background: linear-gradient(135deg, #FFB020, #FF6A00) !important;
-}
-.btn-visit:hover{
-  background: linear-gradient(135deg, #FF9E1B, #FF4D00) !important;
-}
-
-
 
 
 
