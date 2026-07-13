@@ -1725,7 +1725,16 @@ section{
 }
 
 
+/* OVERRIDE - Orange Visit Buttons */
+.tool-footer .btn-visit {
+  background: linear-gradient(135deg, #FF8C00, #FF4500) !important;
+}
 
+.tool-footer .btn-visit:hover {
+  background: linear-gradient(135deg, #FF7F00, #E63900) !important;
+  transform: translateY(-2px) !important;
+  box-shadow: 0 8px 20px rgba(255, 69, 0, 0.35) !important;
+}
 
 
 
