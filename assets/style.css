@@ -936,6 +936,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
   overflow: hidden;
   border: 1px solid var(--border);
   background: var(--bg-soft);
+  margin-bottom: 6px;
 }
 
 .tool-media img{
