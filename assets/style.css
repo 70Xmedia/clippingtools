@@ -945,9 +945,6 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
   object-position: center;
   display: block;
 }
-.tool-card:hover .tool-media img{
-  transform: scale(1.03);
-}
 
 
 
