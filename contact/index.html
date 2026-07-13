@@ -53,34 +53,80 @@
 
       <div class="form-card">
         <h3 class="mt-0">Send us a message</h3>
-        <form class="form-grid" action="mailto:support@clippingapps.com" method="post" enctype="text/plain">
-          <div class="form-row">
-            <div>
-              <label for="name">Your name</label>
-              <input type="text" id="name" name="name" placeholder="Jane Doe" required />
-            </div>
-            <div>
-              <label for="email">Your email</label>
-              <input type="email" id="email" name="email" placeholder="you@example.com" required />
-            </div>
-          </div>
-          <div>
-            <label for="topic">What's this about?</label>
-            <select id="topic" name="topic">
-              <option>General question</option>
-              <option>Correction on a review</option>
-              <option>Partnership / advertising</option>
-              <option>Submit a tool for review</option>
-              <option>Something else</option>
-            </select>
-          </div>
-          <div>
-            <label for="message">Message</label>
-            <textarea id="message" name="message" placeholder="Tell us what's on your mind..." required></textarea>
-          </div>
-          <button type="submit" class="btn btn-primary">Send Message</button>
-          <p class="form-note">Submitting this form opens your email client addressed to support@clippingapps.com. Prefer to email directly? Use the address alongside.</p>
-        </form>
+        
+<form class="form-grid" id="contact-form">
+  <div class="form-row">
+    <div>
+      <label for="name">Your name</label>
+      <input type="text" id="name" name="name" placeholder="Jane Doe" required />
+    </div>
+    <div>
+      <label for="email">Your email</label>
+      <input type="email" id="email" name="email" placeholder="you@example.com" required />
+    </div>
+  </div>
+  <div>
+    <label for="topic">What's this about?</label>
+    <select id="topic" name="topic">
+      <option>General question</option>
+      <option>Correction on a review</option>
+      <option>Partnership / advertising</option>
+      <option>Submit a tool for review</option>
+      <option>Something else</option>
+    </select>
+  </div>
+  <div>
+    <label for="message">Message</label>
+    <textarea id="message" name="message" placeholder="Tell us what's on your mind..." required></textarea>
+  </div>
+
+  <!-- spam trap, keep hidden -->
+  <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
+  <input type="hidden" name="_subject" value="New message from ClippingTools contact form">
+  <input type="hidden" name="_captcha" value="false">
+
+  <button type="submit" class="btn btn-primary" id="contact-submit-btn">Send Message</button>
+
+  <div id="contact-form-success" style="display:none; padding:14px 16px; border-radius:var(--radius-sm); background:#DEFBEE; border:1px solid #1C9A6C; color:var(--ink); font-size:0.9rem;">
+    ✓ Thanks — your message has been sent. We'll get back to you within 2–3 business days.
+  </div>
+  <div id="contact-form-error" style="display:none; padding:14px 16px; border-radius:var(--radius-sm); background:#FFEAEA; border:1px solid #D14C4C; color:var(--ink); font-size:0.9rem;">
+    Something went wrong sending your message. Please email us directly at <a href="mailto:support@clippingapps.com">support@clippingapps.com</a>.
+  </div>
+  <p class="form-note">We aim to respond to every message within 2–3 business days.</p>
+</form>
+
+<script>
+document.getElementById('contact-form').addEventListener('submit', function (e) {
+  e.preventDefault();
+  var form = e.target;
+  var btn = document.getElementById('contact-submit-btn');
+  var success = document.getElementById('contact-form-success');
+  var error = document.getElementById('contact-form-error');
+  success.style.display = 'none';
+  error.style.display = 'none';
+  btn.disabled = true;
+  btn.textContent = 'Sending...';
+
+  fetch('https://formsubmit.co/ajax/support@clippingapps.com', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+    body: JSON.stringify(Object.fromEntries(new FormData(form)))
+  })
+    .then(function (res) { return res.json(); })
+    .then(function () {
+      form.reset();
+      success.style.display = 'block';
+    })
+    .catch(function () {
+      error.style.display = 'block';
+    })
+    .finally(function () {
+      btn.disabled = false;
+      btn.textContent = 'Send Message';
+    });
+});
+</script>
       </div>
 
       <div class="contact-detail">
