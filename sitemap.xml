@@ -6,17 +6,17 @@
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://www.clippingtools.com/about.html</loc>
+    <loc>https://www.clippingtools.com/about/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://www.clippingtools.com/contact.html</loc>
+    <loc>https://www.clippingtools.com/contact/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://www.clippingtools.com/submit.html</loc>
+    <loc>https://www.clippingtools.com/submit/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
